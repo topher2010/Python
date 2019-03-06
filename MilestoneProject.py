@@ -9,27 +9,17 @@ def display_board(board):
 
 def player_input():
     marker = ''
-<<<<<<< HEAD
 
     while not (marker == 'X' or marker == 'O'):
         marker == input("Player 1: Choose X or O ").upper()
 
     if marker == 'X':
         return ('X', 'O')
-=======
-    
-    while marker != 'X' and marker != 'O':
-        marker = input('Player 1, choose X or O: ')
-    
-    player1 = marker
-    
-    if player1 == 'X':
-        player2 = 'O'
->>>>>>> d31a811f376a5a4c1a66afe7f80101189571f52e
     else:
-        player2 = 'X'
-        
-    return (player1,player2)
+        return ('O', 'X')
+
+def place_marker(board, marker, position):
+    board[position] = marker
 
 def win_check(board, marker):
     
@@ -41,10 +31,9 @@ def win_check(board, marker):
            (board[3] == marker and board[6] == marker and board[9] == marker) or #down right
            (board[1] == marker and board[5] == marker and board[9] == marker) or #diagonal left to right
            (board[3] == marker and board[5] == marker and board[7] == marker)) #diagonal right to left
-<<<<<<< HEAD
 
 def choose_first():
-    if random.int(0,1) == 0:
+    if random.randint(0,1) == 0:
         return 'Player 2'
     else:
         return 'Player 1'
@@ -99,7 +88,7 @@ while True:
                 break
             else:
                 if full_board_check(board):
-                    display(board)
+                    display_board(board)
                     print('The game is a draw!')
                     break
                 else: turn = 'Player 2'
@@ -116,12 +105,10 @@ while True:
                 break
             else:
                 if full_board_check(board):
-                    display(board)
+                    display_board(board)
                     print('The game is a draw!')
                     break
                 else: turn = 'Player 1'
 
     if not replay():
         break
-=======
->>>>>>> d31a811f376a5a4c1a66afe7f80101189571f52e
