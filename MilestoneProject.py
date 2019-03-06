@@ -1,24 +1,38 @@
 import random
 
+board = [' ']*10
+
 def display_board(board):
     print(' ' + board[1] + ' ' + ' | ' + ' ' + board[2] + ' ' + ' | ' + ' ' + board[3] + ' ')
+    print('---------------')
     print(' ' + board[4] + ' ' + ' | ' + ' ' + board[5] + ' ' + ' | ' + ' ' + board[6] + ' ')
+    print('---------------')
     print(' ' + board[7] + ' ' + ' | ' + ' ' + board[8] + ' ' + ' | ' + ' ' + board[9] + ' ')
 
 def player_input():
     marker = ''
+<<<<<<< HEAD
 
     while not (marker == 'X' or marker == 'O'):
         marker == input("Player 1: Choose X or O ").upper()
 
     if marker == 'X':
         return ('X', 'O')
-    else:
-        return ('0', 'X')
-
-def place_marker(board, marker, position):
-    board[position] = marker
+=======
     
+    while marker != 'X' and marker != 'O':
+        marker = input('Player 1, choose X or O: ')
+    
+    player1 = marker
+    
+    if player1 == 'X':
+        player2 = 'O'
+>>>>>>> d31a811f376a5a4c1a66afe7f80101189571f52e
+    else:
+        player2 = 'X'
+        
+    return (player1,player2)
+
 def win_check(board, marker):
     
     return ((board[1] == marker and board[2] == marker and board[3] == marker) or #across the top
@@ -29,6 +43,7 @@ def win_check(board, marker):
            (board[3] == marker and board[6] == marker and board[9] == marker) or #down right
            (board[1] == marker and board[5] == marker and board[9] == marker) or #diagonal left to right
            (board[3] == marker and board[5] == marker and board[7] == marker)) #diagonal right to left
+<<<<<<< HEAD
 
 def choose_first():
     if random.int(0,1) == 0:
@@ -110,3 +125,5 @@ while True:
 
     if not replay():
         break
+=======
+>>>>>>> d31a811f376a5a4c1a66afe7f80101189571f52e
