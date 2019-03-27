@@ -184,7 +184,7 @@ while True:
 
     # if player hasn't busted, play Dealer's hand until Dealer reaches 17
     if player_hand.value <= 21:
-        while dealer_hand < 17:
+        while dealer_hand.value < 17:
             hit(deck,dealer_hand)
 
         show_all(player_hand,dealer_hand)
