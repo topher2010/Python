@@ -49,7 +49,7 @@ class Hand:
         # card passed in
         # from Deck.deal() --> single Card(suit,rank)
         self.cards.append(card)
-        self.value =+ values[card.rank]
+        self.value += values[card.rank]
 
         # track aces
         if card.rank == 'Ace':
