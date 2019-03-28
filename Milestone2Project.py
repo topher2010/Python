@@ -6,7 +6,7 @@ values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
 
 playing = True
 
-class Card():
+class Card:
 
     def __init__(self,suit,rank):
         self.suit = suit
@@ -15,7 +15,7 @@ class Card():
     def __str__(self):
         return self.rank+ " of "+self.suit
 
-class Deck():
+class Deck:
 
     def __init__(self):
 
@@ -63,7 +63,7 @@ class Hand:
             self.value -= 10
             self.aces -= 1
 
-class Chips():
+class Chips:
 
     def __init__(self):
         self.total = 100 #this can be set to a default value or supplied by user input
@@ -91,8 +91,7 @@ def take_bet(chips):
 
 def hit(deck,hand):
 
-    single_card = deck.deal()
-    hand.add_card(single_card)
+    hand.add_card(deck.deal())
     hand.adjust_for_ace()
 
 def hit_or_stand(deck,hand):
@@ -184,6 +183,7 @@ while True:
 
     # if player hasn't busted, play Dealer's hand until Dealer reaches 17
     if player_hand.value <= 21:
+
         while dealer_hand.value < 17:
             hit(deck,dealer_hand)
 
@@ -191,10 +191,13 @@ while True:
 
         if dealer_hand.value > 21:
             dealer_busts(player_hand,dealer_hand,player_chips)
+
         elif dealer_hand.value > player_hand.value:
             dealer_wins(player_hand,dealer_hand,player_chips)
+
         elif dealer_hand.value < player_hand.value:
             player_wins(player_hand,dealer_hand,player_chips)
+
         else:
             push(player_hand,dealer_hand)
 
